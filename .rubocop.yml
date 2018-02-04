@@ -1,0 +1,36 @@
+# 自動生成されるものはチェック対象から除外する
+AllCops:
+  Exclude:
+    - "vendor/**/*" # rubocop config/default.yml
+    - "db/schema.rb"
+    - "node_modules/**/*"
+  DisplayCopNames: true
+
+################ Layout #######################
+
+Layout:
+  Enabled: true
+
+Style:
+  Enabled: false
+
+Lint:
+  Enabled: true
+
+Metrics:
+  Enabled: true
+
+Performance:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Security:
+  Enabled: true
+
+Bundler:
+  Enabled: false
+
+LineLength:
+  Max: 100
