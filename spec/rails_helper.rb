@@ -28,7 +28,6 @@ require 'factory_girl_rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
-  config.include SessionsHelper
   config.include FactoryGirl::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -58,21 +57,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation,{:except => %w{categories jobs initials job_positions}})
-    DatabaseCleaner.strategy = :transaction
-  end
-
-  config.before :each do
-    DatabaseCleaner[:mongoid].start
-    DatabaseCleaner.start
-  end
-
-  config.after :each do
-    DatabaseCleaner[:mongoid].clean
-    DatabaseCleaner.clean
-  end
-
-
   config.infer_spec_type_from_file_location!
+
+  config.include SignIn
 end
