@@ -52,7 +52,6 @@ group :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'launchy'
-  gem "faker"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
