@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
     sequence(:id) { |n| }
     provider "facebook"
-    uid 1
+    sequence(:uid) { |n| }
     nickname "Jaru"
     image_url "ImageUrl"
   end

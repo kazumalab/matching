@@ -3,22 +3,18 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
-  let(:user) { create(:user) }
+  let(:user) { build(:user) }
   let(:facebook) { "facebook" }
+  before do
+    sign_in_as(facebook, user)
+  end
 
   describe "#create" do
-    before do
-      sign_in_as(facebook, user)
-    end
-
     it { expect(response).to have_http_status(:success) }
   end
 
   describe "#destroy" do
-    before do
-      sign_in_as(facebook, user)
-      get :destroy, params: { session: { user_id: user.id } }
-    end
+    before { get :destroy, params: { session: { user_id: user.id } } }
 
     it { expect(response).to have_http_status 302 }
     it { expect(response).to redirect_to root_path }
