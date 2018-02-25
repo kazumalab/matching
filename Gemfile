@@ -18,7 +18,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'haml-lint'
-gem 'rake', '< 11.0'
+gem 'erb2haml'
+gem 'rake', '< 11'
+gem 'omniauth'
+gem 'omniauth-facebook'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -31,10 +34,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'rspec-rails', '~> 2.14.0'
-  gem 'factory_girl_rails', '~> 4.2.1'
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.7.2'
+  gem 'chromedriver-helper', '~> 1.1.0'
+  gem 'capybara', '~> 2.16.1'
+  gem 'selenium-webdriver', '~> 3.8.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -45,11 +49,10 @@ group :development do
 end
 
 group :test do
+  gem 'factory_girl_rails', '~> 4.2.1', :require => false
   gem 'faker'
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'selenium-webdriver'
-  gem "faker"
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
