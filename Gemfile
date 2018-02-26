@@ -22,6 +22,7 @@ gem 'erb2haml'
 gem 'rake', '< 11'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'semantic-ui-sass'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
