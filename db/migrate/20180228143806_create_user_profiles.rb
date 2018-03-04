@@ -3,6 +3,7 @@ class CreateUserProfiles < ActiveRecord::Migration[5.1]
     create_table :user_profiles do |t|
       t.integer :user_id,              limit: 4,                   null: false, unsigned: true
       t.integer :job_id,               limit: 4,                   null: false, unsigned: true
+      t.integer :sex_type,             limit: 1,                   null: false, unsigned: true # 性別 0:男性 1:女性
       t.integer :height,               limit: 4,                   null: false, unsigned: true # 身長
       t.integer :body_type,            limit: 1, default: 0,       null: false, unsigned: true # 体型 0:未選択
       t.integer :blood_type,           limit: 1, default: 0,       null: false                 # 血液型 0:未選択

@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180304052333) do
   create_table "user_profiles", force: :cascade do |t|
     t.integer "user_id", limit: 4, null: false
     t.integer "job_id", limit: 4, null: false
+    t.integer "sex_type", limit: 1, null: false
     t.integer "height", limit: 4, null: false
     t.integer "body_type", limit: 1, default: 0, null: false
     t.integer "blood_type", limit: 1, default: 0, null: false
