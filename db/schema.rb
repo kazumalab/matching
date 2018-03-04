@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180304033325) do
+ActiveRecord::Schema.define(version: 20180304052333) do
+
+  create_table "hometowns", force: :cascade do |t|
+    t.integer "user_profile_id", limit: 4, null: false
+    t.integer "prefecture_id", limit: 4, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "name", null: false
@@ -18,10 +25,23 @@ ActiveRecord::Schema.define(version: 20180304033325) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prefectures", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "residences", force: :cascade do |t|
+    t.integer "user_profile_id", limit: 4, null: false
+    t.integer "prefecture_id", limit: 4, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_profiles", force: :cascade do |t|
     t.integer "user_id", limit: 4, null: false
     t.integer "job_id", limit: 4, null: false
-    t.integer "height", limit: 4, default: 130, null: false
+    t.integer "height", limit: 4, null: false
     t.integer "body_type", limit: 1, default: 0, null: false
     t.integer "blood_type", limit: 1, default: 0, null: false
     t.integer "education_background", limit: 1, default: 0, null: false
