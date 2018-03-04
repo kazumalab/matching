@@ -40,6 +40,9 @@ group :development, :test do
   gem 'capybara', '~> 2.16.1'
   gem 'selenium-webdriver', '~> 3.8.0'
   gem 'rails-controller-testing'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do
