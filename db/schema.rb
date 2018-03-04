@@ -52,7 +52,8 @@ ActiveRecord::Schema.define(version: 20180304052333) do
     t.integer "smoking", limit: 1, default: 0, null: false
     t.integer "marriage_history", limit: 1, default: 0, null: false
     t.integer "marriage_intention", limit: 1, default: 0, null: false
-    t.integer "date_cost", limit: 1, default: 0, null: false
+    t.integer "date_cost_at_first", limit: 1, default: 0, null: false
+    t.integer "date_cost_after_second", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
