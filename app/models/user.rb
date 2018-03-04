@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :user_profiles
+  has_one :user_profile
 
   def self.find_or_crete_from_auth_hash(auth_hash)
     provider = auth_hash[:provider]

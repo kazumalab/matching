@@ -27,8 +27,8 @@ class UserProfile < ApplicationRecord
     undisplay: 16
   }
   enum holiday: { weekends: 1, weekdays: 2, irregular: 3 }
-  enum drink_alcohol: { a_litte: 1, frequently: 2, fit_to_partner: 3, absolutely: 4 }
-  enum smoking: { absolutely: 1, absolutely_non_smoker: 2, electronic_cigarette: 3, cigarette: 4, stop_for_partner: 5 }
+  enum drink_alcohol: { a_litte: 1, frequently: 2, fit_to_partner: 3, absolutely: 4 }, _suffix: "drink_alcohol"
+  enum smoking: { absolutely: 1, absolutely_front_non_smoker: 2, electronic_cigarette: 3, cigarette: 4, stop_for_partner: 5 }, _suffix: "smoking"
   enum marriage_history: { single: 1, divorce: 2, bereavement: 3 }
   enum marriage_intention: {
     within_this_year: 1,
@@ -37,6 +37,6 @@ class UserProfile < ApplicationRecord
     if_find_good_person: 4,
     no_intention_now: 5
   }
-  enum first_date_cost: { all_by_men: 1, a_little_more_by_men: 2, dutch_treat: 3, my_payment: 4 }, _prefix: "first"
-  enum after_date_cost: { all_by_men: 1, a_little_more_by_men: 2, dutch_treat: 3, my_payment: 4 }, _prefix: "after"
+  enum first_date_cost: { all_by_men: 1, a_little_more_by_men: 2, dutch_treat: 3, my_payment: 4 }, _prefix: "first_date"
+  enum after_first_date_cost: { all_by_men: 1, a_little_more_by_men: 2, dutch_treat: 3, my_payment: 4 }, _prefix: "after_first_date"
 end
