@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225073520) do
+ActiveRecord::Schema.define(version: 20180304033325) do
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer "user_id", limit: 4, null: false
+    t.integer "job_id", limit: 4, null: false
+    t.integer "height", limit: 4, default: 130, null: false
+    t.integer "body_type", limit: 1, default: 0, null: false
+    t.string "blood_type", limit: 1, default: "0", null: false
+    t.integer "education_background", limit: 1, default: 0, null: false
+    t.integer "annual_income", limit: 1, default: 0, null: false
+    t.integer "holiday", limit: 1, default: 0, null: false
+    t.integer "drink_alcohol", limit: 1, default: 0, null: false
+    t.integer "smoking", limit: 1, default: 0, null: false
+    t.integer "marriage_history", limit: 1, default: 0, null: false
+    t.integer "marriage_intention", limit: 1, default: 0, null: false
+    t.integer "date_cost", limit: 1, default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", null: false
