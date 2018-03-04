@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180304033325) do
     t.integer "job_id", limit: 4, null: false
     t.integer "height", limit: 4, default: 130, null: false
     t.integer "body_type", limit: 1, default: 0, null: false
-    t.string "blood_type", limit: 1, default: "0", null: false
+    t.integer "blood_type", limit: 1, default: 0, null: false
     t.integer "education_background", limit: 1, default: 0, null: false
     t.integer "annual_income", limit: 1, default: 0, null: false
     t.integer "holiday", limit: 1, default: 0, null: false
