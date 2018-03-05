@@ -20,6 +20,12 @@ Lint:
 Metrics:
   Enabled: true
 
+LineLength:
+  Max: 130
+
+MethodLength:
+  Max: 25
+
 Performance:
   Enabled: false
 
@@ -31,6 +37,3 @@ Security:
 
 Bundler:
   Enabled: false
-
-LineLength:
-  Max: 100
