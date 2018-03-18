@@ -2,10 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
-    sequence(:id) { |n| }
     provider "facebook"
-    sequence(:uid) { |n| }
+    sequence(:uid) { |n| n }
     nickname "Jaru"
-    image_url "ImageUrl"
+    image_url "http://graph.facebook.com/1234567/picture?type=square"
   end
 end
