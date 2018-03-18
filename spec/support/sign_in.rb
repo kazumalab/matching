@@ -2,9 +2,10 @@ module SignIn
   def sign_in_as(provider, user)
     OmniAuth.config.mock_auth[:provider] = {
       provider: provider,
-      uid: user.id,
-      nickname: user.nickname,
-      image_url: user.image_url
+      uid: user.uid,
+      name: user.nickname,
+      image: user.image_url,
+      email: user.email
     }
   end
 end
